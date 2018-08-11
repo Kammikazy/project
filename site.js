@@ -64,7 +64,7 @@
                     notEmpty: {
                         message: 'password'
                     },
-					Confirmapass : 'password must match'
+					password_again : 'password must match'
                 }
 				},
             email: {
