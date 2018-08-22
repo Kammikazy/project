@@ -1,0 +1,52 @@
+doctype html
+html
+  head
+    title First Game
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,IE=9,IE=8,chrome=1')
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black')
+    link(href='http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='../vendor/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='../vendor/fontawesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='../vendor/themify-icons/themify-icons.min.css')
+    link(href='../vendor/animate.css/animate.min.css', rel='stylesheet', media='screen')
+    link(href='../vendor/perfect-scrollbar/perfect-scrollbar.min.css', rel='stylesheet', media='screen')
+    link(href='../vendor/switchery/switchery.min.css', rel='stylesheet', media='screen')
+    link(rel='stylesheet', href='../stylesheets/styles.css')
+    link(rel='stylesheet', href='../stylesheets/plugins.css')
+    link(rel='shortcut icon', type='image/x-icon', href='../favicon.ico')
+  body
+  #app
+      include includes/menuvertical.jade 
+      .app-content
+        header.navbar.navbar-default.navbar-static-top
+          .navbar-header 
+            a.sidebar-mobile-toggler.pull-left.hidden-md.hidden-lg(href='#', data-toggle-class='app-slide-off', data-toggle-target='#app', data-toggle-click-outside='#sidebar')
+              i.ti-align-justify
+            a.navbar-brand(href='#')
+             Main Menu
+            a.sidebar-toggler.pull-right.visible-md.visible-lg(href='#', data-toggle-class='app-sidebar-closed', data-toggle-target='#app')
+              i.ti-align-justify
+            a#menu-toggler.pull-right.menu-toggler.visible-xs-block(data-toggle='collapse', href='.navbar-collapse')
+              span.sr-only Toggle navigation
+              i.ti-view-grid
+           include includes/menuhorizental.jade
+        .main-content
+          #container.wrap-content.container
+            include includes/recourses.jade 
+            block title
+            include  includes/citys.jade
+      include includes/footer.jade
+script(src='../vendor/jquery/jquery.min.js')
+script(src='../vendor/bootstrap/js/bootstrap.min.js')
+script(src='../vendor/modernizr/modernizr.js')
+script(src='../vendor/jquery-cookie/jquery.cookie.js')
+script(src='../vendor/perfect-scrollbar/perfect-scrollbar.min.js')
+script(src='../vendor/switchery/switchery.min.js')
+script(src='../javascripts/main1.js')
+script.
+  jQuery(document).ready(function() {
+  Main.init();
+  });

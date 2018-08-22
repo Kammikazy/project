@@ -1,0 +1,180 @@
+#sidebar.sidebar.app-aside
+  .sidebar-container.perfect-scrollbar
+    nav
+      .search-form
+        a.s-open(href='#')
+          i.ti-search
+        form.navbar-form(role='search')
+          a.s-remove(href='#', target='.navbar-form')
+            i.ti-close
+          .form-group
+            input.form-control(type='text', placeholder='Search...')
+            button.btn.search-button(type='submit')
+              i.ti-search
+      .navbar-title
+        span Main Navigation
+      if(locals.user.user_type_id!=3)      
+        ul.main-navigation-menu
+            li
+              a(href='/Administration')
+                .item-content
+                  .item-media
+                    i.ti-home
+                  .item-inner
+                    span.title Home
+            li
+              a(href='#Recurse')
+                .item-content
+                  .item-media
+                    i.fa.fa-newspaper-o
+                  .item-inner
+                    span.title Resource
+            li
+              a(href='#Marketplace')
+                .item-content
+                  .item-media
+                    i.ti-book
+                  .item-inner
+                    span.title Marketplace
+            li
+              a(href='#Researches')
+                .item-content
+                  .item-media
+                    i.ti-themify-favicon-alt
+                  .item-inner
+                    span.title Researches
+            li
+              a(href='#Army')
+                .item-content
+                  .item-media
+                    i.fa.fa-crosshairs
+                  .item-inner
+                    span.title Army
+            li
+              a(href='#')
+                .item-content
+                  .item-media
+                    i.ti-shield
+                  .item-inner
+                    span.title Defenses
+            li
+              a(href='#Movements')
+                .item-content
+                  .item-media
+                    i.fa.fa-user
+                  .item-inner
+                    span.title Movements
+            li
+              a(href='#Map')
+                .item-content
+                  .item-media
+                    i.fa.fa-history
+                  .item-inner
+                    span.title Map
+            li
+              a(href='#Empire')
+                .item-content
+                  .item-media
+                    i.ti-help-alt
+                  .item-inner
+                    span.title Empire
+            li
+              a(href='/Administration/Alliances')
+                .item-content
+                  .item-media
+                    i.ti-settings
+                  .item-inner
+                    span.title Alliances
+            li
+              a(href='#Recruiting')
+                .item-content
+                  .item-media
+                    i.ti-home
+                  .item-inner
+                    span.title Recruiting Officers
+            li
+              a(href='#Shop')
+                .item-content
+                  .item-media
+                    i.ti-home
+                  .item-inner
+                    span.title Shop
+      if(locals.user.user_type_id==3)
+        ul.main-navigation-menu
+            li
+              a(href='/Administration')
+                .item-content
+                  .item-media
+                    i.ti-home
+                  .item-inner
+                    span.title Home
+            li
+              a(href='#Recurse')
+                .item-content
+                  .item-media
+                    i.fa.fa-newspaper-o
+                  .item-inner
+                    span.title Resource
+            li
+              a(href='#Marketplace')
+                .item-content
+                  .item-media
+                    i.ti-book
+                  .item-inner
+                    span.title Marketplace
+            li
+              a(href='#Researches')
+                .item-content
+                  .item-media
+                    i.ti-themify-favicon-alt
+                  .item-inner
+                    span.title Researches
+            li
+              a(href='#Army')
+                .item-content
+                  .item-media
+                    i.fa.fa-crosshairs
+                  .item-inner
+                    span.title Army
+            li
+              a(href='#')
+                .item-content
+                  .item-media
+                    i.ti-shield
+                  .item-inner
+                    span.title Defenses
+            li
+              a(href='#Movements')
+                .item-content
+                  .item-media
+                    i.fa.fa-user
+                  .item-inner
+                    span.title Movements
+            li
+              a(href='#Map')
+                .item-content
+                  .item-media
+                    i.fa.fa-history
+                  .item-inner
+                    span.title Map
+            li
+              a(href='#')
+                .item-content
+                  .item-media
+                    i.ti-settings
+                  .item-inner
+                    span.title Alliances
+            li
+              a(href='#Recruiting')
+                .item-content
+                  .item-media
+                    i.ti-home
+                  .item-inner
+                    span.title Recruiting Officers
+            li
+              a(href='#Shop')
+                .item-content
+                  .item-media
+                    i.ti-home
+                  .item-inner
+                    span.title Shop
