@@ -1,0 +1,37 @@
+extends layout
+block content
+   .row
+   .main-login.col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-4
+        .logo.margin-top-30
+   h1 Login
+   #erro.alert.alert-danger(style='visibility:collapse', name='erro')
+      strong Error
+      p
+        | Username our password is wrong
+   form#loginForm.form-login(method='post', name='loginForm')
+      fieldset
+        legend
+          | Sign in to your account
+        p
+          | Please enter your name and password to log in.
+        .form-group
+          span.input-icon
+            input#username.form-control(type='text', name='username', placeholder='Username')
+            i.fa.fa-user
+        .form-group.form-actions
+          span.input-icon
+            input#password.form-control.password(type='password', name='password', placeholder='Password')
+            i.fa.fa-lock
+            a.forgot(href='#')  I forgot my password
+        .form-actions
+          .checkbox.clip-check.check-primary
+            input#remember(type='checkbox', value='1')
+            label(for='remember')  Keep me signed in
+          input#target.btn.btn-primary.pull-right(type='submit', value='Submit', name='target')
+        .new-account
+          | Don't have an account yet?
+          a(href='createUser')  Create an account
+    if(error==true)
+    script(type='text/javascript').
+      document.getElementById("erro").style.visibility = "visible";
+      window.setTimeout("location.href='login'",3000);

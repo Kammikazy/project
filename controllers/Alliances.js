@@ -2,16 +2,19 @@ const Allianca = require('../models/Alliances')
 
 const findAlianca = async (connection,  req, res) => {
 
-  const allianca = await Allianca.find(connection,req.session.user.username)
-  if (!allianca) {
- res.status(404).send('Nenhuma cidade encontrada.')
- return;
-}
-console.log("dddd");
-          req.session.alianca = allianca
-          res.locals.alianca = allianca
-res.render('Administration/Aliances/aliance',{aliancas: 123456})
+  const alianca = await Allianca.findAlianca(connection,req.session.user.username)
+  if(!alianca){
+      return false
   }
+  else{
+console.log("dddd");
+          req.session.alianca= alianca
+          res.locals.alianca= alianca
+
+res.render('Administration/Alliances')
+  }
+}
+
 
   module.exports = {
    findAlianca

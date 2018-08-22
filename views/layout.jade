@@ -1,0 +1,176 @@
+﻿doctype html
+html
+  head
+    title First Game
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,IE=9,IE=8,chrome=1')
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black')
+    link(href='http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='vendor/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='vendor/fontawesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='vendor/themify-icons/themify-icons.min.css')
+    link(href='vendor/animate.css/animate.min.css', rel='stylesheet', media='screen')
+    link(href='vendor/perfect-scrollbar/perfect-scrollbar.min.css', rel='stylesheet', media='screen')
+    link(href='vendor/switchery/switchery.min.css', rel='stylesheet', media='screen')
+    link(rel='stylesheet', href='stylesheets/styles.css')
+    link(rel='stylesheet', href='stylesheets/plugins.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='shortcut icon', type='image/x-icon', href='/favicon.ico')
+  body
+   #app
+      #sidebar.sidebar.app-aside
+        .sidebar-container.perfect-scrollbar
+          nav
+            .search-form
+              a.s-open(href='#')
+                i.ti-search
+              form.navbar-form(role='search')
+                a.s-remove(href='#', target='.navbar-form')
+                  i.ti-close
+                .form-group
+                  input.form-control(type='text', placeholder='Search...')
+                  button.btn.search-button(type='submit')
+                    i.ti-search
+            .navbar-title
+              span Main Navigation
+            ul.main-navigation-menu
+              li
+                a(href='/')
+                  .item-content
+                    .item-media
+                      i.ti-home
+                    .item-inner
+                      span.title Home
+              li
+                a(href='news')
+                  .item-content
+                    .item-media
+                      i.fa.fa-newspaper-o
+                    .item-inner
+                      span.title News
+              li
+                a(href='#thegame')
+                  .item-content
+                    .item-media
+                      i.ti-book
+                    .item-inner
+                      span.title The Game
+              li
+                a(href='#forum', target='_blank')
+                  .item-content
+                    .item-media
+                      i.ti-themify-favicon-alt
+                    .item-inner
+                      span.title Forum
+              li
+                a(href='#')
+                  .item-content
+                    .item-media
+                      i.fa.fa-diamond
+                    .item-inner
+                      span.title Store
+              li
+                a(href='#media')
+                  .item-content
+                    .item-media
+                      i.fa.fa-film
+                    .item-inner
+                      span.title Media
+              li
+                a(href='#wiki')
+                  .item-content
+                    .item-media
+                      i.ti-help-alt
+                    .item-inner
+                      span.title Wiki
+              li
+                a(href='#Support', target='_blank')
+                  .item-content
+                    .item-media
+                      i.ti-settings
+                    .item-inner
+                      span.title Support
+              li
+                a(href='#UserAbuse')
+                  .item-content
+                    .item-media
+                      i.ti-home(style='visibility:hidden')
+                    .item-inner
+                      span.title User Abuse
+              li
+                a(href='#PasswordReset')
+                  .item-content
+                    .item-media
+                      i.ti-home(style='visibility:hidden')
+                    .item-inner
+                      span.title 2DN Password Reset
+      .app-content
+        header.navbar.navbar-default.navbar-static-top
+          .navbar-header
+            a.sidebar-mobile-toggler.pull-left.hidden-md.hidden-lg(href='#', data-toggle-class='app-slide-off', data-toggle-target='#app', data-toggle-click-outside='#sidebar')
+              i.ti-align-justify
+            a.navbar-brand(href='#')
+              p First Game
+            a.sidebar-toggler.pull-right.visible-md.visible-lg(href='#', data-toggle-class='app-sidebar-closed', data-toggle-target='#app')
+              i.ti-align-justify
+            a#menu-toggler.pull-right.menu-toggler.visible-xs-block(data-toggle='collapse', href='.navbar-collapse')
+              span.sr-only Toggle navigation
+              i.ti-view-grid
+          .navbar-collapse.collapse
+            ul.nav.navbar-right
+              li.dropdown
+                a(href='createUser')
+                  i.fa.fa-user-plus
+                  span Register
+              li.dropdown
+                a(href='login')
+                  i.fa.fa-user
+                  span Login
+            .close-handle.visible-xs-block.menu-toggler(data-toggle='collapse', href='.navbar-collapse')
+              .arrow-left
+              .arrow-right
+        .main-content
+          #container.wrap-content.container
+            section#page-title
+                  h1.mainTitle
+                  span.mainDescription
+                  block content
+          .social-icons
+            ul
+              | Follow First Game where
+              li.social-twitter(tooltip='Twitter', tooltip-placement='top')
+                a(href='https://www.twitter.com/')
+              li.social-facebook(tooltip='Facebook', tooltip-placement='top')
+                a(href='https://www.facebook.com/')
+              li.social-youtube(tooltip='YouTube', tooltip-placement='top')
+                a(href='https://www.youtube.com/')
+      include includes/footer.jade
+      
+script(src='vendor/jquery/jquery.min.js')
+script(src='vendor/bootstrap/js/bootstrap.min.js')
+script(src='vendor/modernizr/modernizr.js')
+script(src='vendor/jquery-cookie/jquery.cookie.js')
+script(src='vendor/perfect-scrollbar/perfect-scrollbar.min.js')
+script(src='vendor/switchery/switchery.min.js')
+script(src='javascripts/main.js')
+script(src='javascripts/login.js')
+script(src='javascripts/form-elements.js')
+script(src='javascripts/angular.min.js')
+script(src='javascripts/ui-bootstrap-tpls-0.10.0.min.js')
+script(src='vendor/jquery-validation/jquery.validate.min.js')
+script(src='vendor/maskedinput/jquery.maskedinput.min.js')
+script(src='vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js')
+script(src='vendor/autosize/autosize.min.js')
+script(src='vendor/selectFx/classie.js')
+script(src='vendor/selectFx/selectFx.js')
+script(src='vendor/select2/select2.min.js')
+script(src='vendor/bootstrap-datepicker/bootstrap-datepicker.min.js')
+script(src='vendor/bootstrap-timepicker/bootstrap-timepicker.min.js')
+script.
+  jQuery(document).ready(function() {
+  Main.init();
+  Login.init();
+  FormElements.init();
+  });

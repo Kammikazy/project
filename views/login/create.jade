@@ -1,0 +1,48 @@
+extends layout
+block content
+          .main-login.col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-4
+          #erro.alert.alert-success(style='visibility:collapse', name='erro')
+            p
+              | Registration is Make With Sucess
+          form.form-register(method="post")
+            fieldset
+              legend
+                | Sign Up
+              p
+                | Enter your account details below:
+              .form-group
+                span.input-icon
+                  input#username.form-control(type='text', name='username', placeholder='username')
+                  i.fa.fa-user
+              .form-group
+                span.input-icon
+                  input#email.form-control(type='email', name='email', placeholder='Email')
+                  i.fa.fa-envelope
+              .form-group
+                span.input-icon
+                  input.form-control(type='email', name='email_again', placeholder='Email')
+                  i.fa.fa-envelope
+              .form-group
+                span.input-icon
+                  input#password.form-control(type='password', name='password', placeholder='Password')
+                  i.fa.fa-lock
+              .form-group
+                span.input-icon
+                  input.form-control(type='password', name='password_again', placeholder='Password Again')
+                  i.fa.fa-lock
+              .form-group
+                .checkbox.clip-check.check-primary
+                  input#agree(type='checkbox', value='agree')
+                  label(for='agree')
+                    | I agree
+              .form-actions
+                p
+                  | Already have an account?
+                  a(href='/login')
+                    | Log-in
+                input#target.btn.btn-primary.pull-right(type='submit', value='Submit', name='target')
+              
+              if(error==false)
+                 script(type='text/javascript').
+                  document.getElementById("erro").style.visibility = "visible";
+                  window.setTimeout("location.href='login'",3000);
