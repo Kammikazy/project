@@ -39,7 +39,10 @@ res.render('Administration/')
         //  user.password = undefined
               req.session.cidade = cidade
               res.locals.cidade = cidade
-    res.render('Administration/Alliances')
+            
+//res.status(200).send(cidade);
+  //
+
         }
       }
 
