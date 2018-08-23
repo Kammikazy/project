@@ -11,7 +11,7 @@ const findcidade = async (connection,  req, res) => {
     //  user.password = undefined
           req.session.cidade = cidade
           res.locals.cidade = cidade
-res.render('Administration/')
+return res.render('Administration/')
     }
   }
   const findcidade2 = async (connection,  req, res) => {
@@ -25,7 +25,7 @@ res.render('Administration/')
       //  user.password = undefined
             req.session.cidade = cidade
             res.locals.cidade = cidade
-  res.render('Administration/perfil')
+          res.render('Administration/perfil')
       }
     }
     const findcidade3 = async (connection,  req, res) => {
@@ -39,7 +39,7 @@ res.render('Administration/')
         //  user.password = undefined
               req.session.cidade = cidade
               res.locals.cidade = cidade
-            
+              res.render('Administration/Alliances')
 //res.status(200).send(cidade);
   //
 

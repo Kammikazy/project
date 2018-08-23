@@ -134,7 +134,59 @@ block title
                                   a.text-info(href='') more details
                                   | 																					.
               #panel_edit_account.tab-pane.fade
-                include Perfil/edit
+                form#form(method="post")
+              
+                  fieldset
+                    legend Account Info
+                    .row
+                      .col-md-6
+                        .form-group
+                          label.control-label Username
+                          input#username.form-control(type='text',value=locals.user.username,readonly name='username')
+                        .form-group
+                          label.control-label Email Address
+                          input#email.form-control(type='email', value=locals.user.mail, name='email')
+                        .form-group
+                          label.control-label Old Password
+                          input#oldpassword.form-control(type='password', placeholder='old password', name='oldpassword')
+                        .form-group
+                          label.control-label New Password
+                          input#password.form-control(type='password', placeholder='password', name='password')
+                        .form-group
+                          label.control-label Confirm  New Password
+                          input#password_again.form-control(type='password', placeholder='password', name='password_again')
+                      .col-md-6
+                        .row
+                        .form-group
+                          label Image Upload
+                          .fileinput.fileinput-new(data-provides='fileinput')
+                            .fileinput-new.thumbnail
+                              img(src='../images/default-user.png', alt='')
+                            .fileinput-preview.fileinput-exists.thumbnail
+                            .user-edit-image-buttons
+                              span.btn.btn-azure.btn-file
+                                span.fileinput-new
+                                  i.fa.fa-picture
+                                  |  Select image
+                                span.fileinput-exists
+                                  i.fa.fa-picture
+                                  |  Change
+                                input(type='file')
+                              a.btn.fileinput-exists.btn-red(href='#', data-dismiss='fileinput')
+                                i.fa.fa-times
+                                |  Remove
+                
+                  .row
+                    .col-md-12
+                      div
+                        | Required Fields
+                        hr
+                  .row
+                    .col-md-8
+                      p By clicking UPDATE, you are agreeing to the Policy and Terms & Conditions.
+                    .col-md-4
+                      input#target.btn.btn-primary.pull-right(type='submit', value='Submit', name='target')
+                  
               #panel_projects.tab-pane.fade
                 table#projects.table
                   thead
@@ -205,4 +257,5 @@ block title
                             span.sr-only  40% Complete (warning)
                       td.center.hidden-xs
                         span.label.label-warning High
+                    
   

@@ -10,14 +10,14 @@ const controlleruser = require('../../controllers/Alliances')
 router.get('/Administration/Alliances', (req, res, next) => {
 
   //Do something here and to add data to your request use
-  controllerAdmin.findcidade3(connection, req, res)
-    //res.render('Administration/Alliances')
-    next();
-}, (req, res, next) => {
   controlleruser.findAlianca(connection, req, res)
 
-  
+    next();
+}, (req, res, next) => {
+    //Can continue this cycle of calling next function until last `sendResponse` function is reached.
+    //Can even set `error` in request for `sendResponse`
 
+  controllerAdmin.findcidade3(connection, req, res)
 
 })
 

@@ -10,7 +10,7 @@ const findAlianca = async (connection,  req, res) => {
 console.log("dddd");
           req.session.alianca= alianca
           res.locals.alianca= alianca
-  res.render('Administration/Alliances')
+
 
   }
 }
