@@ -44,25 +44,25 @@ const createUser =  async (connection, req, res) => {
 }
 
 const AlteraUserpassword =  async (connection, req, res) => {
-  req.body.password = await hashpass(req.body.password)
+
   const user = await User.findUser(connection, req.body.username)
     if(!await bcrypt.compare(req.body.oldpassword, user.password)){
- res.json({'valid': false});
-  res.end('{"error" : "Updated Successfully", "status" : 200}');
+  return res.send(JSON.stringify({'valid': false}));
 }
     else{
+        req.body.password = await hashpass(req.body.password)
   const user= await User.AlteraPasswordUser(connection, req.body)
   if(!user){
     console.log("Nao Deu");
- res.json({'valid': false});
-   res.end('{error" : "Updated Successfully", "status" : 200}');
+return  res.send(JSON.stringify({'valid': false}));
+
 
   }else{
 
   console.log("Deu")
   console.log(req.body.username)
-  res.json({'valid': true});
-   res.end('{"success" : "Updated Successfully", "status" : 200}');
+return  res.send(JSON.stringify({'valid': true}));
+
 }
 }
 }
