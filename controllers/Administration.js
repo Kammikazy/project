@@ -1,51 +1,62 @@
 const Cidade = require('../models/Cidades')
+const bcrypt = require('bcrypt')
+const User = require('../models/user')
+const hashpass = (password) =>{
+    return new Promise((resolve, reject) =>{
+        bcrypt.genSalt((err, salt) =>{
+            if(err){
+                reject(err)
+            }else{
+                bcrypt.hash(password, salt,(err, hash)=>{
+                    if(err){
+                        reject(err)
+                    }else{
+                        resolve(hash)
+                    }
+                })
+            }
+        })
+    })
+}
+const Formindex = (req, res) => {
+  console.log('oo');
+  return  res.render('Administration/index')
+}
+const Formperfil = (req, res) => {
+    res.render('Administration/perfil')
+}
+const FormAliances = (req, res) => {
+    res.render('Administration/alliances')
+}
+const AlteraUserpassword =  async (connection, req, res) => {
+  console.log(req.body.oldpassword);
 
-const findcidade = async (connection,  req, res) => {
+  const user = await User.findUser(connection, req.body.username)
+    if(!await bcrypt.compare(req.body.oldpassword, user.password)){
 
-  const cidade = await Cidade.findcidade(connection, req.session.user.username)
-      if(!cidade){
-          return false
-      }
-      else{
-      //  console.log(cu);
-    //  user.password = undefined
-          req.session.cidade = cidade
-          res.locals.cidade = cidade
-return res.render('Administration/')
-    }
-  }
-  const findcidade2 = async (connection,  req, res) => {
+  return res.render('Administration/perfil', {error: true})
+}
+    else{
+        req.body.password = await hashpass(req.body.password)
+  const user= await User.AlteraPasswordUser(connection, req.body)
+  if(!user){
+    console.log("Nao Deu");
+ 
+return res.render('Administration/perfil', {error: true})
 
-    const cidade = await Cidade.findcidade(connection, req.session.user.username)
-        if(!cidade){
-            return false
-        }
-        else{
-        //  console.log(cu);
-      //  user.password = undefined
-            req.session.cidade = cidade
-            res.locals.cidade = cidade
-          res.render('Administration/perfil')
-      }
-    }
-    const findcidade3 = async (connection,  req, res) => {
 
-      const cidade = await Cidade.findcidade(connection, req.session.user.username)
-          if(!cidade){
-              return false
-          }
-          else{
-          //  console.log(cu);
-        //  user.password = undefined
-              req.session.cidade = cidade
-              res.locals.cidade = cidade
-              res.render('Administration/Alliances')
-//res.status(200).send(cidade);
-  //
 
-        }
-      }
+  }else{
+     return res.send({'valid': true});
+
+return res.render('Administration/perfil', {error: false})
+  
+
+}
+}
+}
 
   module.exports = {
-      findcidade,findcidade2,findcidade3
+    Formindex,Formperfil,FormAliances,AlteraUserpassword
+
   }

@@ -34,9 +34,9 @@ require('./routes/login')(app)
 require('./routes/home')(app)
 require('./routes/news')(app)
 require('./routes/Administration')(app)
-require('./routes/Administration/perfil')(app)
+//require('./routes/Administration/perfil')(app)
 require('./routes/logout')(app)
-require('./routes/Administration/Alliances')(app)
+//require('./routes/Administration/Alliances')(app)
 //app.use('/', login);
 //app.use('/Administration', admin);
 //**********************************//

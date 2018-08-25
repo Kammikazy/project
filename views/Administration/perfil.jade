@@ -3,6 +3,14 @@ block title
     .col-xs-6.col-xs-offset-3.col-sm-6.col-sm-offset-3
       .row
     .col-sm-4(style='width:76%')
+      if(error==false)
+        #erro.alert.alert-success(style='visibility:collapse', name='erro')
+          p
+          | Password as been change with sucess 
+       if(error==true)  
+         #erro1.alert.alert-danger(style='visibility:collapse', name='erro1') 
+          p
+          | Password as been change with  not sucess 
        .col-md-12
           .tabbable
             ul#myTab4.nav.nav-tabs.tab-padding.tab-space-3.tab-blue
@@ -256,4 +264,14 @@ block title
                             span.sr-only  40% Complete (warning)
                       td.center.hidden-xs
                         span.label.label-warning High
+                        
+       
+      if(error==false)
+         script(type='text/javascript').
+          document.getElementById("erro").style.visibility = "visible";
+            window.setTimeout("location.href='index'",3000);         
+       if(error==true)
+         script(type='text/javascript').
+          document.getElementById("erro1").style.visibility = "visible";
+          window.setTimeout("location.href='index'",3000);         
                       
