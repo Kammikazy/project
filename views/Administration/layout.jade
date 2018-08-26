@@ -39,16 +39,12 @@ html
             block title
             include  includes/citys.jade
       include includes/footer.jade
-script(src='../vendor/jquery/jquery.min.js')
+script(src='../vendor/jquery/jquery.js')
 script(src='../vendor/bootstrap/js/bootstrap.min.js')
 script(src='../vendor/modernizr/modernizr.js')
 script(src='../vendor/jquery-cookie/jquery.cookie.js')
 script(src='../vendor/perfect-scrollbar/perfect-scrollbar.min.js')
 script(src='../vendor/switchery/switchery.min.js')
-script(src='../javascripts/main1.js')
-script(src='../javascripts/perfil.js')  
-script(src='../javascripts/bootstrapValidator.js')
-script(src='../javascripts/bootstrapValidator.min.js')
 script(src='../javascripts/form-elements.js')
 script(src='../javascripts/angular.min.js')
 script(src='../javascripts/ui-bootstrap-tpls-0.10.0.min.js')
@@ -61,10 +57,13 @@ script(src='../vendor/selectFx/selectFx.js')
 script(src='../vendor/select2/select2.min.js')
 script(src='../vendor/bootstrap-datepicker/bootstrap-datepicker.min.js')
 script(src='../vendor/bootstrap-timepicker/bootstrap-timepicker.min.js')
+script(src='../javascripts/bootstrapValidator.js')
+script(src='../javascripts/main1.js')
+script(src='../javascripts/perfil.js')  
 script.
   jQuery(document).ready(function() {
   Main.init();
-  $("#target").click(function(){
-    alert("The paragraph was clicked.");
-     });
-   });
+      });
+
+
+  

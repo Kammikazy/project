@@ -149,16 +149,16 @@ block title
                       .col-md-6
                         .form-group
                           label.control-label Username
-                          input#username.form-control(type='text',value=locals.user.username,readonly name='username')
+                          input#username.form-control(type='text',value=locals.user.username,readonly, name='username')
                         .form-group
                           label.control-label Email Address
-                          input#email.form-control(type='email', value=locals.user.mail, name='email')
+                          input#email.form-control(type='email', value=locals.user.mail,readonly, name='email')
                         .form-group
                           label.control-label Old Password
-                          input#oldpassword.form-control(type='password', placeholder='old password', name='oldpassword')
+                          input#oldpassword.form-control(type='password',value='', placeholder='old password', name='oldpassword')
                         .form-group
                           label.control-label New Password
-                          input#password.form-control(type='password', placeholder='password', name='password')
+                          input#password.form-control(type='password', value='', placeholder='password', name='password')
                         .form-group
                           label.control-label Confirm  New Password
                           input#password_again.form-control(type='password', placeholder='password', name='password_again')
@@ -264,14 +264,41 @@ block title
                             span.sr-only  40% Complete (warning)
                       td.center.hidden-xs
                         span.label.label-warning High
-                        
-       
-      if(error==false)
-         script(type='text/javascript').
-          document.getElementById("erro").style.visibility = "visible";
-            window.setTimeout("location.href='index'",3000);         
-       if(error==true)
-         script(type='text/javascript').
-          document.getElementById("erro1").style.visibility = "visible";
-          window.setTimeout("location.href='index'",3000);         
+                        script(src='../vendor/jquery/jquery.js')
+                        script.
+                          $(document).ready(function() {
+                          $("#target").click(function(){
+                            $.ajax({
+                                url: 'perfil',
+                                data: $('.perfilupdate').serialize(),
+                                type: 'POST',
+                                ContentType:'application/json',
+                                crossDomain: true,
+                                success: function(data) {
+                                  console.log(data);
+                                  if(data==true){
+                                    JSON.parse(data)
+                                    
+                                  //  document.getElementById("erro").style.visibility = 'visible'
+                                  
+                                    alert("Valido");
+                                  }
+                                  else{
+                                    
+                                    //document.getElementById("erro1").style.visibility = 'visible'
+                                  
+                                      alert("inValido");
+                                  }
+                                
+                                      
+                                },
+                                error: function(errorThrown) {
+                                  console.log(errorThrown);
+                                  alert("dddd")
+                                }
+                              });
+                               });
+                              }); 
+                                      
+                      
                       
