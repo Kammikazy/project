@@ -12,7 +12,9 @@ zipcode:String,
 username:String,
 email:String,
 password:String,
+nivel:String,
 quote:{type:String,default:"You Have no Quote"}
+
 
 })
 
